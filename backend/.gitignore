@@ -1,0 +1,66 @@
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.Python
+
+# Virtual Environments
+env/
+venv/
+.venv/
+.ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebooks
+*.ipynb_checkpoints/
+lab.ipynb
+test.ipynb
+
+# PyTorch Models & Datasets
+Model/Saved/*.pth
+Model/Saved/*.pt
+Model/Saved/*.pkl
+Test_Image/
+data/
+datasets/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+
+# FastAPI specific
+.fastapi-cli

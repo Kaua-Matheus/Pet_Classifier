@@ -1,0 +1,12 @@
+torch
+torchaudio
+torchvision
+
+scikit-learn
+matplotlib
+
+python-dotenv
+
+fastapi[standard]
+
+opencv-python
