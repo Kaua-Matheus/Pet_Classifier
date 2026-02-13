@@ -1,10 +1,12 @@
+# Versões compatíveis com Python 3.11+ (sem distutils)
+
+# PyTorch CPU (versões mais recentes)
+--index-url https://download.pytorch.org/whl/cpu
 torch
-torchaudio
 torchvision
+torchaudio
 
-scikit-learn
-matplotlib
-
+# FastAPI e dependências
 python-dotenv
 
 fastapi[standard]

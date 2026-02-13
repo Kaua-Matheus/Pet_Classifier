@@ -6,10 +6,9 @@ from Model.model import *
 import os
 import io
 from PIL import Image
-from http.client import HTTPException
 
 # FastAPI
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 # Torch
@@ -45,7 +44,10 @@ TRANSFORM = Get_Transform()
 
 # Loading Trained Model
 if os.path.isfile(os.getenv("SAVED_MODEL_PATH")):
-    LOADED_SAVE = torch.load(os.getenv("SAVED_MODEL_PATH"))
+    LOADED_SAVE = torch.load(
+        os.getenv("SAVED_MODEL_PATH"), 
+        map_location=DEVICE
+    )
     print("saved model loaded successfully")
 else:
     raise FileNotFoundError("couldn't identify the trained model archive")
