@@ -179,3 +179,9 @@ DEVICE = torch.device("cpu")  # Force CPU usage
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 🎉 Demonstração
+
+![Demo](demo.gif)
+
+*Upload uma imagem e veja a magia acontecer!*

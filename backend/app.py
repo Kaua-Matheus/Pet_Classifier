@@ -6,6 +6,7 @@ from Model.model import *
 import os
 import io
 from PIL import Image
+from http.client import HTTPException
 
 # FastAPI
 from fastapi import FastAPI, UploadFile, File
@@ -22,18 +23,14 @@ from dotenv import load_dotenv
 app = FastAPI()
 
 origins = [
-    "http://localhost",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "http://192.168.18.21:8000",
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
 )
 
 # Loading .env
@@ -86,7 +83,14 @@ def Debug():
 @app.post("/predict/")
 async def predict( file: UploadFile = File(...) ):
 
-    print(file)
+    if not file.content_type.startswith('image/'):
+        raise HTTPException(400, "Apenas imagens são aceitas")
+    
+    contents = await file.read()
+    if len(contents) > 10 * 1024 * 1024:
+        raise HTTPException(400, "Arquivo muito grande")
+    
+    await file.seek(0)
 
     image_tensor = __preprocess_image(image_file=file)
 
