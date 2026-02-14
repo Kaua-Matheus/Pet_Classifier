@@ -51,14 +51,9 @@ Pet_Classifier/
 
 3. **Execute a API**:
 
-   **Desenvolvimento**:
+   **Navegue para o diretório backend**:
    ```bash
-   fastapi dev app.py
-   ```
-
-   **Produção**:
-   ```bash
-   fastapi run app.py
+   python3 main.py
    ```
 
 4. **API disponível em**: `http://localhost:8000`
