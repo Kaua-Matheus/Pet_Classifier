@@ -11,6 +11,8 @@ from PIL import Image
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
+import uvicorn
+
 # Torch
 import torch
 import torch.nn.functional as F
@@ -116,3 +118,6 @@ async def predict( file: UploadFile = File(...) ):
         "confidence": round(confidence * 100, 2),
         "all_probabilities": all_probabilities,
     }
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
