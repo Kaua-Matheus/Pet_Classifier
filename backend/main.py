@@ -20,25 +20,33 @@ import torch.nn.functional as F
 # DotEnv
 from dotenv import load_dotenv
 
-# Application
-app = FastAPI()
-
-origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-)
 
 # Loading .env
 if load_dotenv():
     print(".env loaded successfully")
 else:
     raise FileNotFoundError("couldn't load .env, verify if it is correct..")
+
+# Application
+app = FastAPI()
+
+origins = [
+    "*",
+    # "http://localhost:3000",
+    # "http://127.0.0.1:3000",
+    # "http://localhost:5173",
+    # "http://127.0.0.1:5173",
+]
+
+print("Origens: ", origins)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 # Loading Model
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")

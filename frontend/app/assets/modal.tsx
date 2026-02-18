@@ -16,7 +16,7 @@ interface Model {
 
 export default function Modal() {
 
-    const apiURL = import.meta.env.VITE_API_URL || "localhost"
+    const apiURL = import.meta.env.VITE_API_URL || "0.0.0.0"
     const apiPORT = import.meta.env.VITE_API_PORT || "8000"
 
     const [isLoading, setIsLoading] = useState(false)
