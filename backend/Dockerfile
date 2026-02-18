@@ -26,6 +26,6 @@ RUN pip install torch torchvision torchaudio --index-url https://download.pytorc
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 443
 
 CMD ["python3", "main.py"]  

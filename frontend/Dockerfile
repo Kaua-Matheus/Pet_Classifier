@@ -11,11 +11,11 @@ COPY public/ ./public/
 
 COPY . .
 
-ENV VITE_API_URL=0.0.0.0
-ENV VITE_API_PORT=8000
+ENV VITE_API_URL="IP público"
+ENV VITE_API_PORT=443
 
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 80
 
-CMD ["npm", "run", "start", "--host"]
+CMD ["npx", "vite", "preview", "--host", "0.0.0.0", "--port", "80"]

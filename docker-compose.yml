@@ -9,10 +9,10 @@ services:
     container_name: backend_api
     environment:
       SAVED_MODEL_PATH: "/app/Model/Saved/dogxcat.pth"
-      SERVER_HOST: 127.0.0.1
-      SERVER_PORT: 8000
+      SERVER_HOST: 0.0.0.0
+      SERVER_PORT: 443
     ports:
-      - "127.0.0.1:8000:8000"
+      - "443:443"
     restart: unless-stopped
     network_mode: "host"
 
@@ -23,25 +23,11 @@ services:
       dockerfile: Dockerfile
       args:
         - VITE_API_URL=localhost
-        - VITE_API_PORT=8000
+        - VITE_API_PORT=443
     container_name: frontend_api
-    # depends_on:
-    #   condition: service_healthy
     ports:
-      - "3000:3000"
+      - "80:80"
     restart: unless-stopped
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-
-# networks:
-#   application-network:
-#     driver: bridge
-
-    # public_network:
-  #   driver: bridge
-  #   ipam:
-  #     config:
-  #       - subnet: 172.20.0.0/16
 
 volumes:
   backend_data:
