@@ -38,7 +38,7 @@ export default function Home() {
                 transform active:scale-95
                 hover:-translate-y-0.5 hover:scale-102
                 cursor-pointer shadow-lg hover:shadow-xl" 
-              src="../../public/images/loop_dark.png" 
+              src="/images/loop_dark.png" 
               alt="Kauã Repo" />
           </a>
           <Modal />
