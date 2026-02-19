@@ -17,7 +17,7 @@ export default function Button(
         variant = "primary"
     }: ButtonProps) {
 
-        const variants = {
+    const variants = {
         primary: `
             bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700
             text-white shadow-lg hover:shadow-xl
@@ -36,8 +36,11 @@ export default function Button(
         <button 
             className={`
                 relative overflow-hidden
-                p-3 px-6 min-w-30 h-12
-                rounded-lg font-semibold text-sm
+                p-2 px-3 sm:p-3 sm:px-6 
+                min-w-20 sm:min-w-30 
+                h-10 sm:h-12
+                rounded-lg font-semibold 
+                text-xs sm:text-sm
                 transition-all duration-300 ease-in-out
                 cursor-pointer
                 transform active:scale-95

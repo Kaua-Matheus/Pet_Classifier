@@ -27,12 +27,13 @@ venv.bak/
 # Jupyter Notebooks
 *.ipynb_checkpoints/
 lab.ipynb
+lab dogxcat.ipynb
+lab dog.ipynb
+lab cat.ipynb
 test.ipynb
 
 # PyTorch Models & Datasets
-Model/Saved/*.pth
-Model/Saved/*.pt
-Model/Saved/*.pkl
+Model/Saved/
 Test_Image/
 data/
 datasets/
